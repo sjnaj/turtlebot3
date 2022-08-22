@@ -1,0 +1,8 @@
+prefix=/home/fengsc/Desktop/turtlebot3/install
+
+Name: map_to_image
+Description: Description of map_to_image
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

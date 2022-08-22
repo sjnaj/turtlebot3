@@ -1,0 +1,8 @@
+prefix=/home/fengsc/Desktop/turtlebot3/install
+
+Name: nav_control
+Description: Description of nav_control
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
