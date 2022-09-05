@@ -30,10 +30,10 @@ class MoveBaseSeq():
                       " is now being processed by the Action Server...")
 
     def feedback_cb(self, feedback):
+        pass
         # To print current pose at each feedback:
-        #rospy.loginfo("Feedback for goal "+str(self.goal_cnt)+": "+str(feedback))
-        rospy.loginfo("Feedback for goal pose " +
-                      str(self.goal_cnt+1)+" received")
+        # rospy.loginfo("Feedback for goal pose " +
+        #               str(self.goal_cnt+1)+" received")
 
     def done_cb(self, status, result):
         self.goal_cnt += 1
@@ -96,11 +96,11 @@ class MoveBaseSeq():
     def callback(self, msg):
         self.goal_cnt = 0
 
-        points_seq = [msg.data[i:i+3] for i in range(0,len(msg.data), 3)]
+        points_seq = [msg.data[i:i+3] for i in range(0, len(msg.data), 3)]
         for point in points_seq:
             self.pose_seq.append(
                 Pose(point, quaternion_from_euler(0, 0, 0, axes='sxyz')))  # 默认姿态
-            
+
         self.movebase_client()
 
 
